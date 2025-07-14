@@ -1,0 +1,164 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html, body {
+    @apply bg-cream-50;
+  }
+}
+
+@layer components {
+    .bannerIcon {
+        @apply w-16 h-16 bg-cream-100 text-gray-700 text-xl inline-flex items-center justify-center rounded-md shadow-shadowOne hover:bg-cream-200 hover:-translate-y-1 transition-all hover:text-amber-600 cursor-pointer duration-300;
+    }
+    .resumeLi {
+        @apply w-full h-20 bg-cream-100 text-xl text-gray-700 flex justify-center cursor-pointer hover:bg-cream-200 duration-300 items-center border-[1px] rounded-none;
+    }
+    .bgOpacity {
+        @apply bg-cream-100/40;
+    }
+    .contactInput {
+        @apply w-full h-12 rounded-lg border-b-[1px] border-b-amber-200 bg-cream-100 text-gray-700 px-4 active:outline-none focus-visible:outline-amber-500 outline-none focus-visible:border-b-transparent duration-300;
+    }
+    .contactTextArea {
+        @apply w-full rounded-lg border-b-[1px] border-b-amber-200 bg-cream-100 text-gray-700 px-4 py-2 active:outline-none focus-visible:outline-amber-500 outline-none focus-visible:border-b-transparent duration-300 resize-none;
+    }
+}
+
+.active {
+    color: #4B5563;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+    display: none;
+}
+
+/* Text animations */
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+.animate-blink {
+    animation: blink 1s step-end infinite;
+}
+
+@keyframes shimmer {
+    0% { background-position: -1000px 0; }
+    100% { background-position: 1000px 0; }
+}
+
+.animate-shimmer {
+    animation: shimmer 2s infinite linear;
+    background: linear-gradient(to right, #4f46e5 4%, #9333ea 25%, #4f46e5 36%);
+    background-size: 1000px 100%;
+}
+
+/* Background animations */
+@keyframes gradient-shift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.animate-gradient-shift {
+    animation: gradient-shift 15s ease infinite;
+    background-size: 200% 200%;
+}
+
+@keyframes gradient-x {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+.animate-gradient-x {
+    animation: gradient-x 3s linear infinite;
+}
+
+/* Particle effects */
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+.animate-float {
+    animation: float 6s ease-in-out infinite;
+}
+
+/* Glowing effects */
+.text-glow {
+    text-shadow: 0 0 10px rgba(147, 51, 234, 0.5),
+                 0 0 20px rgba(147, 51, 234, 0.3),
+                 0 0 30px rgba(147, 51, 234, 0.2);
+}
+
+.glow {
+    box-shadow: 0 0 15px rgba(147, 51, 234, 0.5),
+                0 0 30px rgba(147, 51, 234, 0.3),
+                0 0 45px rgba(147, 51, 234, 0.2);
+}
+
+/* Smooth transitions */
+.transition-all {
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 300ms;
+}
+
+/* Glassmorphism effect */
+.glass {
+    background: rgba(17, 25, 40, 0.75);
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.125);
+}
+
+/* Magnetic hover effect */
+.magnetic {
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.magnetic:hover {
+    transform: scale(1.05);
+}
+
+/* Portal transition */
+@keyframes portal-open {
+    0% { transform: scale(0); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+.animate-portal-open {
+    animation: portal-open 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* Cursor trail effect */
+.cursor-trail {
+    position: fixed;
+    width: 8px;
+    height: 8px;
+    background: rgba(147, 51, 234, 0.5);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    transition: transform 0.1s ease;
+}
+
+/* Responsive text sizes */
+@media (max-width: 640px) {
+    .text-responsive {
+        font-size: clamp(1.5rem, 5vw, 2.5rem);
+    }
+}
+
+/* Performance optimizations */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
