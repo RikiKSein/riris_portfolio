@@ -22,9 +22,9 @@ const About = () => {
       id: 'edu1',
       type: 'education',
       title: "Information System Degree",
-      subTitle: "University of Example",
-      result: "2018-2022",
-      des: "Graduated with honors, focusing on software development and artificial intelligence. Participated in various hackathons and coding competitions."
+      subTitle: "Addis Ababa University",
+      result: "2022-2026",
+      des: "focusing on software development. Participated in various Technology related Events and be part of the community."
     },
     {
       id: 'edu2',
